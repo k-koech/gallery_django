@@ -14,7 +14,10 @@
     width: 100%;
     height: auto;
 }
-
+.landing-search
+{
+  height: 80vh;
+}
   /* Bottom left text */
   .bottom-left {
     position: absolute;
