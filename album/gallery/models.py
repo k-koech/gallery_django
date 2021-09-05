@@ -43,3 +43,10 @@ class Editor(models.Model):
     def __str__(self):
         return self.first_name+" "+self.last_name
 
+class Location(models.Model):
+    name = models.CharField(max_length =30)
+
+    class Meta:
+        verbose_name_plural='Locations'
+    def __str__(self):
+        return self.name
