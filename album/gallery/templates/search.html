@@ -45,4 +45,19 @@
                     <h6>editor</h6>
                       <p class="editor"></p>
                       {{image.editor.email}}
-        
+                    <hr>
+                    <!-- <p class="editor">
+                        {{ image.editor }}
+                    </p> -->
+                    <div class="mt-2 mb-2">
+                        {% for i in image.category.all %}
+                          <button class="btn btn-sm btn-secondary">{{ i.name }}</button>  
+                        {% endfor %}
+                    </div>
+                    <div class="mt-2 mb-2 category">
+                        <!-- {% for i in image.category.all %}
+                          <button class="btn btn-sm btn-secondary">{{ i.name }}</button>  
+                        {% endfor %} -->
+                    </div>
+
+                   
