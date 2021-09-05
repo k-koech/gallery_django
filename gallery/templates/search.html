@@ -28,7 +28,13 @@
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
-
+{% if not images %}
+      <div class="text-center mx-auto">
+        <div class="alert alert-danger" role="alert">
+            No results found!!
+        </div>
+      </div>
+{% else %}
 <div class="container mt-3 mb-4">
     <div class="row">
     {% for image in images %}
@@ -88,8 +94,11 @@
         </div>
 
     {% endfor %}
+
     </div>
 </div>
+{% endif %}
+
 
 {% include 'footer.html' %}
 

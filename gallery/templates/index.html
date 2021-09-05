@@ -14,6 +14,7 @@
 
 <div class="container mt-3 mb-4">
     <div class="row">
+    {% if images %}
     {% for image in images %}
         <div class="col-md-3 col-sm-6 border img-col"  onclick="populateForm('{{ image.id }}')" data-toggle="modal" data-target="#image-details">
            <!-- <a href="{{image.id}}" data-toggle="modal" data-target="#image-details">
@@ -78,7 +79,15 @@
         </div>
 
     {% endfor %}
+    {% else %}
+      <div class="text-center mx-auto">
+        <div class="alert alert-danger" role="alert">
+            There is No image at the moment
+        </div>
+      </div>
+    {% endif %}
     </div>
+    
 </div>
 
 

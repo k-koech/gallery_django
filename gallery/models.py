@@ -4,7 +4,6 @@ from django.db import models
 class Image(models.Model):
     name = models.ImageField(upload_to = 'images/', default='images/default.jpg')
     description = models.TextField()
-    editor = models.ForeignKey('Editor', on_delete=models.CASCADE)
     location = models.ForeignKey('Location', on_delete=models.CASCADE)
     category = models.ForeignKey('Category', on_delete=models.CASCADE) 
     pub_date = models.DateTimeField(auto_now_add=True)
