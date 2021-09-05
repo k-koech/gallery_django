@@ -1,0 +1,37 @@
+.landing
+{
+    height: 90vh;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.landing img
+{
+    width: 100%;
+    height: auto;
+}
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  
+  /* Bottom right text */
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+

@@ -1,0 +1,36 @@
+
+.img-col
+{
+    height: 20em;
+    overflow: hidden;
+}
+
+.img-col:hover
+{
+  cursor: pointer;
+}
+
+.img-col img
+{
+    width:auto;
+    height:18em;
+}
+
+/* #image-details
+{
+  height:100vh;overflow: hidden;
+} */
+
+.modal_body
+{
+  height: 85vh;
+  overflow-y: auto;
+}
+.image_class 
+{
+  height: 50vh;
+}
+ .image_class img
+ {
+   height: 100%;
+ }
