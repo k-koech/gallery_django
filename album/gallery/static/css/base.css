@@ -5,13 +5,16 @@
     text-align: center;
     overflow: hidden;
 }
-
+.landing .navbar-brand
+{
+  color: #fff !important;
+}
 .landing img
 {
     width: 100%;
     height: auto;
 }
-  
+
   /* Bottom left text */
   .bottom-left {
     position: absolute;
