@@ -1,0 +1,48 @@
+{%extends 'base/base.html'%}
+{% load static%}
+
+
+
+{% block content %}
+<!-- styles for index page -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+<div class="container mt-3 mb-4">
+    <div class="row">
+    {% for image in images %}
+        <div class="col-md-3 col-sm-6 border img-col"  onclick="populateForm('{{ image.id }}')" data-toggle="modal" data-target="#image-details">
+           <!-- <a href="{{image.id}}" data-toggle="modal" data-target="#image-details">
+               <img src="{{image.name.url}}" class="img-responsive" alt="Image">
+           </a>  -->
+           <div >
+              <img src="{{image.name.url}}" class="img-responsive" alt="Image">
+              <p>{{image.editor.email}}</p>
+           </div>
+
+        </div>
+
+          <!-- Modal to show details of an image-->
+        <div class="modal fade" style="height:100vh;overflow: hidden;" id="image-details" tabindex="-1" aria-labelledby="image-detailsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h6 class="modal-title name" id="image-detailsLabel"></h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body modal_body">
+                   <div class="text-center image_class">
+                        <img src="" class="img-responsive image" alt="Image">
+                   </div> 
+                    <h4 class="description"></h4>
+                    <h6>location</h6>
+                     <p id="location"></p>
+                    <h6>categories</h6>
+                      <p id="categories"></p>
+                    <h6>editor</h6>
+                      <p class="editor"></p>
+                      {{image.editor.email}}
+        
