@@ -1,0 +1,20 @@
+{% load static%}
+<div class="landing">
+    {% include 'base/navbar.html' %}
+    <img src="{% static 'images/landing.jpg' %}" alt="Snow" style="width:100%;">
+    <div class="bottom-left">Bottom Left</div>
+    <div class="bottom-right">Bottom Right</div>
+    <div class="centered">
+      <h2 class="font-weight-bold">
+        The best free stock photos & videos shared by talented creators.
+      </h2>
+      <div>
+        <form class="d-inline d-block  form-inline my-2 my-lg-0" method="POST" action="search/">
+          {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="query" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      </form>  
+      </div>
+      
+    </div>
+</div>
