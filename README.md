@@ -1,8 +1,8 @@
-# NOTEBOOK
-#### The app is a notebook app, 24/08/2021
+# GALLERY APPLICATION 
+#### The app is a personal gallery app, 05/09/2021
 #### **By Kelvin Kipchumba**
 ## Project Description
-    The app is a personal blogging website where you can create and share your opinions and other users can read and comment on them.
+    Its a personal gallery application that I display my photos for others to see.
 ## Setup/Installation Requirements
     - Download a file in the code section to the desired folder
     - Extract the files
