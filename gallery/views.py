@@ -1,30 +1,40 @@
 from django.db.models import query
 from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Image
+from .models import Category, Image, Location
 from django.http import Http404, JsonResponse
 from django.core import serializers
+import json
+
+
 # Create your views here.
 def home(request):
     images = Image.objects.all()
-    return render(request, "index.html", {"title":"Home","images":images}) 
+    category=Category.objects.all()
+    location = Location.objects.all()
+
+    e_images = Category.objects.filter(id=1)#location="Eldoret"
+    m_images = Category.objects.filter(id=2)#location="Mombasa"
+    n_images = Category.objects.filter(id=3)#location="Nairobi"
+    return render(request, "index.html", {"title":"Home","e_images":e_images, "m_images":m_images, "n_images":n_images,"categories":category,"location":location,"images":images}) 
 
 def get(request,id): 
-    # if request.is_ajax():   
-    # image_detail=Image.objects.all()
-    # image_detail = get_object_or_404(Image, pk=id)
-
-    image_detail=Image.objects.filter(id=id)
-    print(id)
-    # return JsonResponse({"users":image_detail})
-
-    return JsonResponse({"users":list(image_detail.values())})
-    # return HttpResponse(image_detail, content_type="application/json")
+    image_detail=Image.objects.get(id=id)
+    
+    image_dict={}
+    image_dict['id']=image_detail.id
+    image_dict['image']=image_detail.image.url
+    image_dict['description']=image_detail.description
+    image_dict['image_name']=image_detail.image_name
+    image_dict['location']=image_detail.location.name
+    image_dict['category']=image_detail.category.name
+    j_object=json.dumps(image_dict)
+    return JsonResponse({"users":j_object})
 
 def search(request):
     if request.method=="POST":
-        query = request.POST['query']
-        image=Image.objects.filter(description=query)
+        query = request.POST['category']
+        image=Image.objects.filter(category=query)
         return render(request, "search.html", {"title":"Results","images":image}) 
     else:
         return redirect("home")

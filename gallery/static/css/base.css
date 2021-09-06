@@ -1,6 +1,10 @@
+html
+{
+  scroll-behavior: smooth;
+}
 .landing
 {
-    height: 90vh;
+    height: 80vh;
     position: relative;
     text-align: center;
     overflow: hidden;
@@ -14,24 +18,12 @@
     width: 100%;
     height: auto;
 }
-.landing-search
+.search-container
 {
-  height: 80vh;
+  min-height: 80vh;
+  margin-bottom: 2em;
 }
-  /* Bottom left text */
-  .bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-  }
-  
-  
-  /* Bottom right text */
-  .bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-  }
+
   
   /* Centered text */
   .centered {
@@ -41,3 +33,12 @@
     transform: translate(-50%, -50%);
   }
 
+
+  
+@media only screen and (max-width: 600px) 
+{
+  .landing h2
+  {
+      font-size: 1em;
+  }
+}

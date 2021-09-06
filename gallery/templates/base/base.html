@@ -28,34 +28,26 @@
 function populateForm(id) 
   {
 
-
   $(document).ready(function()
   {
-    // setInterval(function(){
-      var urls = "/load/"+id;
+ 
+      var urls=`${window.location.origin}/load/${id}/`
+
         $.ajax({
           type:'GET',
           
           url:urls,
-
           success: function(response)
           {
-            $('#display').empty();
-            for(var key in response.users)
-            {
-              var temp=response.users[key]
-              $('#location').text(temp.location);
-              $('.name').text(temp.name);
-              $('.description').text(temp.description);
-              $(".image").attr("src",'http://127.0.0.1:8000/media/'+temp.name);
-              $('#myInput').val('http://127.0.0.1:8000/media/'+temp.name);
-
-
-              console.log(temp.editor);
-             
-              $('.editor').text(temp.editor_id);
-            } 
-              console.log(response);
+           data=JSON.parse(response.users)
+           $('#location').text(data.location);
+              $('.name').text(data.image_name);
+              $('.date').text(data.pub_date);
+              $('.description').text(data.description);
+              $("#image").attr("src",data.image);
+         
+              $('.myInput').val(data.image);
+                     
           },
 
           error: function(response)
@@ -67,22 +59,69 @@ function populateForm(id)
       // },100000);
   })
   }
+// SHow detailson hover
+$(document).ready(function(){
+$( "#imageDiv" ).mouseenter(function() 
+{
+    var closestImage = $(this).closest("#imageDiv");
+    closestImage.next("#locationDiv").slideDown(100);
+  })
+  .mouseleave(function() {
+    $("#locationDiv" ).hide();
+});
+});
+
 // Copy Function
       function myFunction() 
       {
-          /* Get the text field */
-          var copyText = document.getElementById("myInput");
-          
-          /* Select the text field */
+          var copyText = document.getElementsByClassName("myInput")[0];
           copyText.select();
-          copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-          /* Copy the text inside the text field */
+          copyText.setSelectionRange(0, 99999); 
           navigator.clipboard.writeText(copyText.value);
-
-          /* Alert the copied text */
           alert("Copied the text: " + copyText.value);
         }
+
+  // picking Location 
+  $(document).ready(function()
+    {
+      $("#g-btn").click(function(){
+        $("#general").fadeIn();
+        $("#Eldoret").fadeOut();
+        $("#Mombasa").fadeOut();
+        $("#Nairobi").fadeOut();
+      });
+    });
+
+    $(document).ready(function()
+    {
+      $("#e-btn").click(function(){
+        $("#general").fadeOut();
+        $("#Eldoret").fadeIn();
+        $("#Mombasa").fadeOut();
+        $("#Nairobi").fadeOut();
+      });
+    });
+
+    $(document).ready(function()
+    {
+      $("#n-btn").click(function(){
+        $("#general").fadeOut();
+        $("#Eldoret").fadeOut();
+        $("#Mombasa").fadeOut();
+        $("#Nairobi").fadeIn();
+      });
+    });
+    
+    $(document).ready(function()
+    {
+      $("#m-btn").click(function(){
+        $("#general").fadeOut();
+        $("#Eldoret").fadeOut();
+        $("#Mombasa").fadeIn();
+        $("#Nairobi").fadeOut();
+      });
+    });
+
   </script>
   </body>
 </html>

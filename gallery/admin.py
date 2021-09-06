@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Editor, Location, Category, Image
+from .models import Location, Category, Image
 
 """
     Adding models to an array
 """
-models=[Editor, Location, Category, Image]
+models=[ Location, Category, Image]
 
 # Register your models here.
 for model in models:

@@ -1,25 +1,47 @@
-
-.img-col
+html
 {
-    height: 20em;
-    overflow: hidden;
+  scroll-behavior: smooth;
 }
-
-.img-col:hover
+a{
+  text-decoration: none;
+}
+a:hover
 {
   cursor: pointer;
+}
+.img-col
+{
+  padding-left: 15px;
+  padding-right:15px ;
+    /* overflow: hidden; */
 }
 
 .img-col img
 {
-    width:auto;
-    height:18em;
+    width:100% !important; 
 }
 
-/* #image-details
+.img-col img:hover
 {
-  height:100vh;overflow: hidden;
-} */
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#locationDiv
+{
+    font-family: 'Roboto', sans-serif;
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    padding: 0.3em;
+    font-size: 1.2em;
+    font-weight: 600;
+    bottom: 10px;
+    display: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 .modal_body
 {
@@ -34,3 +56,18 @@
  {
    height: 100%;
  }
+/*  */
+
+
+#Eldoret
+{
+  display:none;
+}
+#Mombasa
+{
+  display:none;
+}
+#Nairobi
+{
+  display:none;
+}
