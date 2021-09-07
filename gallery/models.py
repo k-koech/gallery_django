@@ -12,10 +12,7 @@ class Image(models.Model):
     def save_image(self):
         return self.save()
 
-    # @classmethod
-    # def days_news(cls,date):
-    #     news = cls.objects.filter(pub_date__date = date)
-    #     return news
+
     @classmethod
     def delete_image(cls):
         del_image = cls.objects.get(id).delete()

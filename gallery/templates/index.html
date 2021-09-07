@@ -22,6 +22,56 @@
   </div>
 
  
+    
+    
+    
+
+    <div class="row px-2 mb-3 " id="Eldoret">
+      {% if e_images %}
+        {% for image in e_images %}
+            {% include 'locations.html' %}
+        {% endfor %}
+    
+      {% else %}
+        <div class="text-center mx-auto">
+          <div class="alert alert-danger" role="alert">
+              There is No image at the moment
+          </div>
+        </div>
+      {% endif %} 
+    </div>
+
+    <div class="row px-0 mb-3 " id="Mombasa">
+        {% if m_images %}
+          {% for image in m_images %}
+              {% include 'locations.html' %}
+          {% endfor %}
+    
+        {% else %}
+          <div class="text-center mx-auto">
+            <div class="alert alert-danger" role="alert">
+                There is No image at the moment
+            </div>
+          </div>
+        {% endif %} 
+    </div>
+
+    <div class="row px-2 mb-3 " id="Nairobi">
+      {% if n_images %}
+      {% for image in n_images %}
+          {% include 'locations.html' %}
+      {% endfor %}
+  
+      {% else %}
+        <div class="text-center mx-auto">
+          <div class="alert alert-danger" role="alert">
+              There is No image at the moment
+          </div>
+        </div>
+      {% endif %} 
+    </div>
+
+
     <div class="row px-2 mb-3 " id="general">
       {% if images %}
         {% for image in images %}
@@ -35,51 +85,6 @@
           </div>
         </div>
       {% endif %}  
-    </div>
-    
-
-    <div class="row px-2 mb-3 " id="Eldoret">
-      {% if images %}
-        {% for image in e_images %}
-            {% include 'locations.html' %}
-        {% endfor %}
-    
-      {% else %}
-        <div class="text-center mx-auto">
-          <div class="alert alert-danger" role="alert">
-              There is No image at the moment
-          </div>
-        </div>
-      {% endif %} 
-    </div>
-    <div class="row px-2 mb-3 " id="Mombasa">
-        {% if images %}
-        {% for image in m_images %}
-            {% include 'locations.html' %}
-        {% endfor %}
-    
-        {% else %}
-          <div class="text-center mx-auto">
-            <div class="alert alert-danger" role="alert">
-                There is No image at the moment
-            </div>
-          </div>
-        {% endif %} 
-    </div>
-
-    <div class="row px-2 mb-3 " id="Nairobi">
-      {% if images %}
-      {% for image in n_images %}
-          {% include 'locations.html' %}
-      {% endfor %}
-  
-      {% else %}
-        <div class="text-center mx-auto">
-          <div class="alert alert-danger" role="alert">
-              There is No image at the moment
-          </div>
-        </div>
-      {% endif %} 
     </div>
 
           <!-- Modal to show details of an image-->
