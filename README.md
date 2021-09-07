@@ -24,7 +24,7 @@
   
     
 ## Live link
-Deployed project can be accessed here [Blog](https://blog-flaskapp.herokuapp.com/)   
+Deployed project can be accessed here [Gallery](https://djangogallery.herokuapp.com/)   
 
 ## Known Bugs
     The application works perfectly well, no bugs.
@@ -41,5 +41,5 @@ Deployed project can be accessed here [Blog](https://blog-flaskapp.herokuapp.com
     - phone :: +254725801772
 
 ### License
-*Licenced under the [MT-licence](https://github.com/k-koech/Notebook/blob/master/LICENSE.md)*
+*Licenced under the [MT-licence](https://github.com/k-koech/gallery_django/blob/master/LICENSE.md)*
 Copyright (c) 2021 **Kelvin Kipchumba
