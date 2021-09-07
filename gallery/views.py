@@ -13,9 +13,9 @@ def home(request):
     category=Category.objects.all()
     location = Location.objects.all()
 
-    e_images = Category.objects.filter(location_name="Eldoret")
-    m_images = Category.objects.filter(location_name="Mombasa")
-    n_images = Category.objects.filter(location_name="Nairobi")
+    e_images = Image.objects.filter(location="2")
+    m_images = Image.objects.filter(location="1")
+    n_images = Image.objects.filter(location="3")
     return render(request, "index.html", {"title":"Home","e_images":e_images, "m_images":m_images, "n_images":n_images,"categories":category,"location":location,"images":images}) 
 
 def get(request,id): 
