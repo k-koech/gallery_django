@@ -52,8 +52,35 @@ class ImageTestClass(TestCase):
         Category.delete(id)
         cat = Category.objects.get(id)
         self.assertTrue(len(cat) == 0)
-#  def test_get_news_by_date(self):
-#             test_date = '2017-03-17'
-#             date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
-#             news_by_date = Article.days_news(date)
-#             self.assertTrue(len(news_by_date) == 0)
+
+
+    """Test image""" 
+
+    def test_delete_image(self):
+        id=1
+        Image.delete(id)
+        img = Image.objects.get(id)
+        self.assertTrue(len(img) == 0)
+
+    def test_update_image(self):
+        name="kk.jpg"
+        updates=Image.update_image(name)
+        self.assertEqual(name,"kk.jpg")
+
+    def test_get_image_by_id(self):
+        id = '1'
+        results = Image.get_image_by_id(id)
+        self.assertTrue(len(results) > 0)
+
+    def test_search_image(self):
+        category = 'Tours'
+        results = Image.search_image(category)
+        self.assertTrue(len(results) > 0)
+
+    def test_filter_by_location(self):
+        location = 'Tours'
+        results = Image.filter_by_location(location)
+        self.assertTrue(len(results) > 0)
+
+
+  
