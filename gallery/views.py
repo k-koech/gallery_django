@@ -35,6 +35,8 @@ def search(request):
     if request.method=="POST":
         query = request.POST['category']
         image=Image.objects.filter(category=query)
-        return render(request, "search.html", {"title":"Results","images":image}) 
+        category=Category.objects.get(id=query)
+        header=category.name
+        return render(request, "search.html", {"title":"Results","images":image, "header":header}) 
     else:
         return redirect("home")

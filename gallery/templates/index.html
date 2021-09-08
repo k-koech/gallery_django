@@ -21,12 +21,8 @@
     <hr>
   </div>
 
- 
-    
-    
-    
-
-    <div class="row px-2 mb-3 " id="Eldoret">
+  <div class="container-fluid" id="Eldoret">
+    <div class="row px-2 mb-3 ">
       {% if e_images %}
         {% for image in e_images %}
             {% include 'locations.html' %}
@@ -40,8 +36,10 @@
         </div>
       {% endif %} 
     </div>
-
-    <div class="row px-0 mb-3 " id="Mombasa">
+  </div>
+  
+  <div class="container-fluid" id="Mombasa">
+    <div class="row px-0 mb-3 ">
         {% if m_images %}
           {% for image in m_images %}
               {% include 'locations.html' %}
@@ -55,8 +53,10 @@
           </div>
         {% endif %} 
     </div>
-
-    <div class="row px-2 mb-3 " id="Nairobi">
+  </div>
+  
+  <div class="container-fluid" id="Nairobi">
+    <div class="row px-2 mb-3">
       {% if n_images %}
       {% for image in n_images %}
           {% include 'locations.html' %}
@@ -70,8 +70,9 @@
         </div>
       {% endif %} 
     </div>
+  </div>
 
-
+<div class="container-fluid">
     <div class="row px-2 mb-3 " id="general">
       {% if images %}
         {% for image in images %}
@@ -86,7 +87,7 @@
         </div>
       {% endif %}  
     </div>
-
+  </div>
           <!-- Modal to show details of an image-->
           <div class="modal fade" style="height:100vh;overflow: hidden;" id="image-details" tabindex="-1" aria-labelledby="image-detailsLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
