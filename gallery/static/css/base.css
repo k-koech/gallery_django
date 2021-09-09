@@ -12,7 +12,7 @@ html
 
   .landing
   {
-    position:absolute;
+    position:relative;
   }
   /* Centered text */
   .centered {
