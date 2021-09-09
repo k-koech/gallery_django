@@ -2,22 +2,8 @@ html
 {
   scroll-behavior: smooth;
 }
-.landing
-{
-    height: 80vh;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-}
-.landing .navbar-brand
-{
-  color: #fff !important;
-}
-.landing img
-{
-    width: 100%;
-    height: auto;
-}
+
+
 .search-container
 {
   min-height: 80vh;

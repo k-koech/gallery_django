@@ -4,25 +4,72 @@
 
 
 {% block content %}
-<div class="landing-search">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-        <a class="navbar-brand" href="/">SnapShot</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-          </ul>
+<div class="landing-search bjg-dark">
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i>
+</span>
+
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div> <!-- .site-mobile-menu -->
+  
+  
+  <div class="site-navbar-wrap">
+    <div class="site-navbar-top">
+      <div class="container py-3">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <div class="d-flex mr-auto">
+              <a href="#" class="d-flex align-items-center mr-4">
+                <span class="icon-envelope mr-2"></span>
+                <span class="d-none d-md-inline-block">koechkelvin97@gmail.com</span>
+              </a>
+              <a href="#" class="d-flex align-items-center mr-auto">
+                <span class="icon-phone mr-2"></span>
+                <span class="d-none d-md-inline-block">+254725801772</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 text-right">
+            <div class="mr-auto">
+              <a href="#" class="p-2 pl-0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#" class="p-2 pl-0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#" class="p-2 pl-0"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              <a href="#" class="p-2 pl-0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+            
+          </div>
         </div>
-      </nav>
-    
-</div>
+      </div>
+    </div>
+  
+    <div class="site-navbar site-navbar-target js-sticky-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-2">
+            <h1 class="my-0 site-logo font-weight-bold"><a href="/">SnapShot</a></h1>
+          </div>
+          <div class="col-10">
+            <nav class="site-navigation text-right" role="navigation">
+              <div class="container">
+                <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+  
+                <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                  <li><a href="/" class="nav-link  active font-weight-bold">Home</a></li>
+                  <li><a href="#contact" class="nav-link active font-weight-bold">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="land-search" style="background-image: url('/static/images/hero_1.jpg')"></div>
 
 <!-- styles for index page -->
 <div class="search-container">
