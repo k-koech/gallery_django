@@ -10,7 +10,10 @@ html
   margin-bottom: 2em;
 }
 
-  
+  .landing
+  {
+    position:absolute;
+  }
   /* Centered text */
   .centered {
     position: absolute;
