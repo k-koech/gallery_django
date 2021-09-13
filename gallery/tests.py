@@ -37,7 +37,7 @@ class ImageTestClass(TestCase):
         image="kk.jpg"        
         
         Image.update_image(id,image)
-        image = Image.objects.get(id=1)
+        image = Image.objects.get(id=id)
         self.assertEqual(image.image.url,"http://res.cloudinary.com/dw6wdyms4/image/upload/kk.jpg")
 
     def test_search_image(self):
