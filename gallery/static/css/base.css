@@ -15,7 +15,8 @@ html
     position:relative;
   }
   /* Centered text */
-  .centered {
+  .centered 
+  {
     position: absolute;
     top: 50%;
     left: 50%;

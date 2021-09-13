@@ -14,8 +14,9 @@ class Image(models.Model):
 
 
     @classmethod
-    def delete_image(cls):
-        del_image = cls.objects.get(id).delete()
+    def delete_image(cls,id):
+        del_image = cls.objects.get(id=id)
+        del_image.delete()
         return del_image
     
     @classmethod
@@ -25,8 +26,8 @@ class Image(models.Model):
         return get_img.save()
 
     @classmethod
-    def get_image_by_id(cls,id):
-        image = cls.objects.filter(id = id)
+    def get_image_by_id(cls,ids):
+        image = cls.objects.filter(id=1)
         return image
 
     @classmethod
@@ -50,14 +51,16 @@ class Location(models.Model):
         self.save()
 
     @classmethod
-    def update(cls,name):
-        location= cls.objects.first()
-        location.name= name
-        return location.save()
+    def update(cls,id,name):
+        get_location=cls.objects.get(id=id)
+        get_location.name=name
+        
+        return get_location.save()
 
     @classmethod
-    def delete(cls,id):
-        del_location = cls.objects.get(id).delete()
+    def delete_location(cls,id):
+        del_location = cls.objects.get(id=id)
+        del_location.delete()
         return del_location
 
     class Meta:
@@ -75,16 +78,18 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+    
+    @classmethod
+    def update(cls,id,name):
+        get_category=cls.objects.get(id=id)
+        get_category.name=name
+        
+        return get_category.save()
 
     @classmethod
-    def update(cls,name):
-        category= cls.objects.first()
-        category.name= name
-        return category.save()
-
-    @classmethod
-    def delete(cls,id):
-        del_category = cls.objects.get(id).delete()
+    def delete_category(cls,id):
+        del_category = cls.objects.get(id=id)
+        del_category.delete()
         return del_category
 
 

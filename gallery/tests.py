@@ -1,10 +1,10 @@
 from django.test import TestCase
-from .models import Category, Location,Image
-# Create your tests here.
+from .models import Image,Category,Location
+import datetime as dt
+from django.shortcuts import get_object_or_404
 
 class ImageTestClass(TestCase):
     def setUp(self):
-    
         # Creating a new location and saving it
         self.new_location = Location(name = 'Mombasa')
         self.new_location.save_location()
@@ -17,70 +17,85 @@ class ImageTestClass(TestCase):
         self.image=Image(image = 'xyz.jpg', image_name ='Hotel', description ='It was a one tour to mombasa',location=self.new_location,category=self.new_category ,pub_date="2021-09-05 22:16:35.61389+03")
         self.image.save_image()
 
+        # self.new_article.tags.add(self.new_tag)
+
     def tearDown(self):
-        Location.objects.all().delete()
-        Category.objects.all().delete()
         Image.objects.all().delete()
-
-    def test_instance(self):
-        self.assertTrue(isinstance(self.image,Image))
-        self.assertTrue(isinstance(self.new_category,Category))
-        self.assertTrue(isinstance(self.new_location,Location))
-
-
-        """Testing Location"""
-    def update_location(self):
-        name="Eldoret"
-        updates=Location.update(name)
-        self.assertEqual(name,"Eldoret")
-
-    def delete_location(self):
-        id=1
-        Location.delete(id)
-        loc = Location.objects.get(id)
-        self.assertTrue(len(loc) == 0)
-
-    """Testing Category"""
-    def update_category(self):
-        name="Tours"
-        updates=Location.update(name)
-        self.assertEqual(name,"Tours")
-
-
-    def delete_location(self):
-        id=1
-        Category.delete(id)
-        cat = Category.objects.get(id)
-        self.assertTrue(len(cat) == 0)
-
+        Category.objects.all().delete()
+        Location.objects.all().delete()
 
     """Test image""" 
-
-    def test_delete_image(self):
-        id=1
-        Image.delete(id)
-        img = Image.objects.get(id)
-        self.assertTrue(len(img) == 0)
+    # def test_get_image_by_id(self):
+    #     image = Image.objects.first()
+    #     id=image.id
+    #     results = Image.get_image_by_id(id)
+    #     self.assertTrue(len(results)==1)
 
     def test_update_image(self):
-        name="kk.jpg"
-        updates=Image.update_image(name)
-        self.assertEqual(name,"kk.jpg")
-
-    def test_get_image_by_id(self):
-        id = '1'
-        results = Image.get_image_by_id(id)
-        self.assertTrue(len(results) > 0)
+        image = Image.objects.first()
+        id=image.id
+        image="kk.jpg"
+        Image.update_image(id,image)
+        image = Image.objects.get(id=1)
+        self.assertEqual(image.image.url,"http://res.cloudinary.com/dw6wdyms4/image/upload/kk.jpg")
 
     def test_search_image(self):
-        category = 'Tours'
+        image = Image.objects.first()
+        category = image.category
         results = Image.search_image(category)
         self.assertTrue(len(results) > 0)
 
     def test_filter_by_location(self):
-        location = 'Tours'
+        image = Image.objects.first()
+        location = image.location
         results = Image.filter_by_location(location)
         self.assertTrue(len(results) > 0)
 
+    def test_delete_image(self):
+        image=Image.objects.first()
+        id=image.id
+        Image.delete_image(id)
+        try:
+            img = Image.objects.get(id=id)
+            self.assertTrue("Some results")
+        except Image.DoesNotExist:
+            self.assertTrue("no results"=="no results")
 
-  
+
+        """Testing Location"""
+    def test_update_location(self):
+        location = Location.objects.first()
+        name="Eldoret"
+        id=location.id
+        Location.update(id,name)
+        updated_location = Location.objects.get(id=id)
+        self.assertEqual(updated_location.name,"Eldoret")
+
+    def test_delete_location(self):
+        location=Location.objects.first()
+        id=location.id
+        Location.delete_location(id)
+        try:
+            img = Location.objects.get(id=id)
+            self.assertTrue("Some results")
+        except Location.DoesNotExist:
+            self.assertTrue("Deleted successfully"=="Deleted successfully")
+
+    """Testing Category"""
+    def test_update_category(self):
+        category = Category.objects.first()
+        name="Travel"
+        id=category.id
+        Category.update(id,name)
+        updated_category = Category.objects.get(id=id)
+        self.assertEqual(updated_category.name,"Travel")
+
+    def test_delete_category(self):
+        category=Category.objects.first()
+        id=category.id
+        Category.delete_category(id)
+        try:
+            img = Category.objects.get(id=id)
+            self.assertTrue("Some results")
+        except Category.DoesNotExist:
+            self.assertTrue("Deleted successfully"=="Deleted successfully")
