@@ -25,16 +25,17 @@ class ImageTestClass(TestCase):
         Location.objects.all().delete()
 
     """Test image""" 
-    # def test_get_image_by_id(self):
-    #     image = Image.objects.first()
-    #     id=image.id
-    #     results = Image.get_image_by_id(id)
-    #     self.assertTrue(len(results)==1)
-
-    def test_update_image(self):
+    def test_get_image_by_id(self):
         image = Image.objects.first()
         id=image.id
-        image="kk.jpg"
+        results = Image.get_image_by_id(id)
+        self.assertTrue(len(results)==1)
+
+    def test_update_image(self):
+        image_obj = Image.objects.all()[:1].get()
+        id=image_obj.id
+        image="kk.jpg"        
+        
         Image.update_image(id,image)
         image = Image.objects.get(id=1)
         self.assertEqual(image.image.url,"http://res.cloudinary.com/dw6wdyms4/image/upload/kk.jpg")

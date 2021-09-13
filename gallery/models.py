@@ -20,14 +20,14 @@ class Image(models.Model):
         return del_image
     
     @classmethod
-    def update_image(cls, id,image):
+    def update_image(cls,id,image):
         get_img=cls.objects.get(id=id)
         get_img.image=image
         return get_img.save()
 
     @classmethod
     def get_image_by_id(cls,ids):
-        image = cls.objects.filter(id=1)
+        image = cls.objects.filter(id=ids)
         return image
 
     @classmethod
